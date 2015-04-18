@@ -32,7 +32,7 @@ public class AlarmReciever extends BroadcastReceiver
         // here you can start an activity or service depending on your need
         // for ex you can start an activity to vibrate phone or to ring the phone
 
-        System.out.println("Alarm worked");
+        System.out.println("Alarm worked1");
         // Show the toast  like in above screen shot
         Toast.makeText(context, "Alarm fired", Toast.LENGTH_LONG).show();
 
