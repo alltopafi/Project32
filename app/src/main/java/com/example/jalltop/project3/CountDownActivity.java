@@ -103,7 +103,7 @@ public class CountDownActivity extends Activity {
 
 
 
-        Long time = new GregorianCalendar().getTimeInMillis()+5*1000;
+        Long time = new GregorianCalendar().getTimeInMillis()+10*1000;
 
         // create an Intent and set the class which will execute when Alarm triggers, here we have
         // given AlarmReciever in the Intent, the onRecieve() method of this class will execute when
