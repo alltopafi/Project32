@@ -6,22 +6,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class DismissAlarm extends Activity {
+public class snoozeAlarm extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dismiss_alarm);
-
-        MainActivity.alarms.remove(0);
-
+        setContentView(R.layout.activity_snooze_alarm);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_dismiss_alarm, menu);
+        getMenuInflater().inflate(R.menu.menu_snooze_alarm, menu);
         return true;
     }
 

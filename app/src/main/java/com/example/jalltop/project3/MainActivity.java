@@ -14,11 +14,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 
 public class MainActivity extends Activity {
 
 
    static AlarmManager alarmManager;
+    static ArrayList<AlarmObject> alarms = new ArrayList<AlarmObject>();
     //= (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
 

@@ -19,7 +19,7 @@ public class AlarmReciever extends BroadcastReceiver
 
 
 
-
+   static NotificationManager notManager;
 
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
@@ -38,8 +38,8 @@ public class AlarmReciever extends BroadcastReceiver
 
 
 
-        NotificationManager mNM;
-        mNM = (NotificationManager)context.getSystemService(context.NOTIFICATION_SERVICE);
+        //NotificationManager notManager;
+        notManager = (NotificationManager)context.getSystemService(context.NOTIFICATION_SERVICE);
 
         // The PendingIntent to launch our activity if the user selects this notification
         PendingIntent contentIntent = PendingIntent.getActivity(context, 0, new Intent(context, MainActivity.class), 0);
@@ -47,8 +47,7 @@ public class AlarmReciever extends BroadcastReceiver
 
         PendingIntent dismissIntent = PendingIntent.getActivity(context,0,new Intent(context,DismissAlarm.class),0);
 
-        int temp = CountDownActivity.alarmID;
-        System.out.println(temp);
+
 
 
         Notification not2 = new Notification.Builder(context)
@@ -58,11 +57,11 @@ public class AlarmReciever extends BroadcastReceiver
                 .addAction(R.drawable.ic_launcher,"Dismiss",dismissIntent)
                 .addAction(R.drawable.ic_launcher,"Snooze",contentIntent)
                 .setContentTitle("Alarm")
-                .setContentText("test 1 " + temp)
+                .setContentText("test " + MainActivity.alarms.get(0).alarmID )
                 .setAutoCancel(true)
                 .build();
 
-        mNM.notify(CountDownActivity.alarmID, not2);
+        notManager.notify(MainActivity.alarms.get(0).alarmID, not2);
 
     }
 

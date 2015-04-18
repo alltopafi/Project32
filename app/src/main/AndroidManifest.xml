@@ -29,6 +29,10 @@
             android:name=".DismissAlarm"
             android:label="@string/title_activity_dismiss_alarm" >
         </activity>
+        <activity
+            android:name=".snoozeAlarm"
+            android:label="@string/title_activity_snooze_alarm" >
+        </activity>
     </application>
 
 </manifest>

@@ -25,7 +25,7 @@ public class CountDownActivity extends Activity {
     long month;
     long day;
     long year;
-    static int alarmID=0;
+    static int alarmID=7;
 
 
 
@@ -49,10 +49,21 @@ public class CountDownActivity extends Activity {
             year = datePicker.getYear();
                 System.out.println("Hour " + hour + " Minute " + minute);
                 System.out.println("Month " + month + " Day " + day + " year " + year);
+                System.out.println("alarms size: " + MainActivity.alarms.size());
 
+
+
+                if(MainActivity.alarms.size()!=0)
+                {
+                    alarmID = MainActivity.alarms.get(MainActivity.alarms.size()-1).alarmID+1;
+
+                }
+
+
+                MainActivity.alarms.add(new AlarmObject("Alarm "+alarmID,alarmID));
 
                 scheduleAlarm();
-                alarmID++;
+
 
             }
         });
@@ -97,7 +108,7 @@ public class CountDownActivity extends Activity {
         // create an Intent and set the class which will execute when Alarm triggers, here we have
         // given AlarmReciever in the Intent, the onRecieve() method of this class will execute when
         // alarm triggers and
-        //we will write the code to send SMS inside onRecieve() method pf Alarmreciever class
+
         Intent intentAlarm = new Intent(this, AlarmReciever.class);
 
         // create the object
@@ -107,6 +118,11 @@ public class CountDownActivity extends Activity {
         //set the alarm for particular time
         alarmManager.set(AlarmManager.RTC_WAKEUP,time, PendingIntent.getBroadcast(this, 1, intentAlarm, PendingIntent.FLAG_UPDATE_CURRENT));
        // Toast.makeText(this, "Alarm fired", Toast.LENGTH_LONG).show();
+
+
+
+
+
 
     }
 

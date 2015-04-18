@@ -10,5 +10,6 @@
     <string name="pick_time">picker</string>
     <string name="alarm_service_label">AlarmServiceLabel</string>
     <string name="title_activity_dismiss_alarm">DismissAlarm</string>
+    <string name="title_activity_snooze_alarm">snoozeAlarm</string>
 
 </resources>
